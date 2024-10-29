@@ -37,7 +37,8 @@ Os projetos incluem configurações e operações com diversos periféricos, al�
 
 # Ferramentas
 
-Os projetos foram desenvolvidos no MPLAB X IDE, utilizando o compilador XC8. Este ambiente fornece suporte completo para a arquitetura PIC e facilita a compilação e depuração dos códigos em C. A programação foi realizada em um ambiente Linux, aproveitando ferramentas de linha de comando para manipulação dos arquivos e controle de versões com Git.
+Os projetos foram desenvolvidos no MPLAB X IDE, disponível para Windows, macOS e Linux. [Download MPLAB X IDE](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
+
 
 
 # Geral
