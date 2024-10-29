@@ -10,6 +10,7 @@
 
 - [Resumo](#Resumo)
 - [Ferramentas Utilizadas](#Ferramentas)
+- [Configurações](#Configurações)
 - [Visão Geral](#Geral)
 - [Projetos](#Projetos)
 
@@ -18,22 +19,6 @@
 Este repositório reúne scripts em C desenvolvidos para o microcontrolador PIC18F4580 como parte dos projetos e exercícios práticos da disciplina de Microcontroladores do curso. 
 Os projetos incluem configurações e operações com diversos periféricos, além de aplicações básicas e intermediárias de controle e automação.
 
-## Conteúdo
-
-  ### Controle de LEDs
-    Scripts para controle de LEDs individuais e sequenciais, explorando modos de acionamento, PWM e temporizações.
-
-  ### Display de 7 Segmentos
-        Códigos para exibir valores em displays de 7 segmentos, incluindo contagem, controle de múltiplos dígitos e configuração dos segmentos.
-
-   ### Comunicação Serial (USART, SPI, I2C)
-        Implementações de comunicação serial com o PIC18F4580, possibilitando integração com sensores, outros microcontroladores e dispositivos externos.
-
-  ### Temporizadores e Interrupções
-        Uso de temporizadores e configurações de interrupções para controle preciso de eventos e automação de tarefas.
-        
-  ### Sensores e Atuadores
-        Exemplos de interface com sensores e controle de atuadores básicos, aplicando conceitos de controle digital.
 
 # Ferramentas
 
