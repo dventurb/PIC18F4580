@@ -37,7 +37,16 @@ Os projetos incluem configurações e operações com diversos periféricos, al�
 
 # Ferramentas
 
-Os projetos foram desenvolvidos no MPLAB X IDE, disponível para Windows, macOS e Linux. [Download MPLAB X IDE](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
+## MPLAB X IDE
+Os projetos foram desenvolvidos no MPLAB X IDE, disponível para Windows, macOS e Linux. 
+[Download MPLAB X IDE](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide)
+
+## Tiny Bootloader
+O Tiny Bootloader é utilizado para gravar o código no PIC.
+
+- [Download para Windows](http://www.etc.ugal.ro/cchiculita/software/picbootloader.htm)
+- [Download para Linux e macOS](https://github.com/lcgamboa/tinybldlin)
+
 
 
 
