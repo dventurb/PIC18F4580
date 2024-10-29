@@ -11,6 +11,7 @@
 - [Resumo](#Resumo)
 - [Ferramentas Utilizadas](#Ferramentas)
 - [Configurações](#Configurações)
+- [Documentação](#Documentação)
 - [Visão Geral](#Geral)
 - [Projetos](#Projetos)
 
@@ -34,6 +35,9 @@ O Tiny Bootloader é utilizado para gravar o código no PIC.
 
  
 # Configurações
+
+# Documentação
+- [Esquema Elétrico (PDF)](https://github.com/dventurb/PIC18F4580/blob/main/ESQUEMA_ELETRICO.pdf)
 
 
 
