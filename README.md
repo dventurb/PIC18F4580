@@ -32,6 +32,9 @@ O Tiny Bootloader é utilizado para gravar o código no PIC.
 - [Download para Windows](http://www.etc.ugal.ro/cchiculita/software/picbootloader.htm)
 - [Download para Linux e macOS](https://github.com/lcgamboa/tinybldlin)
 
+ 
+# Configurações
+
 
 
 
