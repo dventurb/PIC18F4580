@@ -1,5 +1,5 @@
 <div align="center" style="text-align: center">
-<img src="https://kswichit.net/887Projectboard/images/IMG_0683.jpg" alt="PIC18F4580 Logo"/>
+<img src="https://imgur.com/a/WkAokM9" alt="PIC18F4580 Logo"/>
 <h3>Projetos em C com PIC18F4580</h3>
 <p>
   Repositório com projetos em C, para o microcontrolador PIC18F4580, desenvolvidos na disciplina de Microcontroladores.
