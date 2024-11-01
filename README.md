@@ -45,16 +45,16 @@ O Tiny Bootloader é utilizado para gravar o código no PIC.
 
 # Geral
 
-O microcontrolador PIC18F4580 é um dispositivo robusto, ideal para aplicações que exigem controle preciso e uso de múltiplos periféricos. Ele inclui registradores como TRIS, LAT e PORT para controle das portas de entrada e saída:
+O microcontrolador é um pequeno computador em um único chip, possui um processador, memória e entradas e saídas para interagir. 
 
   ## TRIS 
-    Define a direção dos pinos de um PORT como entrada (1) ou saída (0).
+    Define a direção dos pinos como entrada (1) ou saída (0).
     
   ## LAT
-    Utilizado para escrever estado lógico de um pino configurado como saída, como sinal alto (1) ou sinal baixo (0).
+    Escrever estado lógico de um pino configurado como saída, com sinal alto (1) ou sinal baixo (0).
     
   ## PORT
-    Utilizado para ler o estado lógico dos pinos de entrada, como sinal alto (1) ou sinal baixo (0).
+    Ler o estado lógico dos pinos de entrada, com sinal alto (1) ou sinal baixo (0).
 
 
 # Projetos
