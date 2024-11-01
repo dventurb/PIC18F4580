@@ -51,10 +51,10 @@ O microcontrolador PIC18F4580 é um dispositivo robusto, ideal para aplicações
     Define a direção dos pinos de um PORT como entrada (1) ou saída (0).
     
   ## LAT
-    Controla o estado lógico de um pino configurado como saída, útil para garantir estabilidade em operações de escrita.
+    Utilizado para escrever estado lógico de um pino configurado como saída, como sinal alto (1) ou sinal baixo (0).
     
   ## PORT
-    Lê ou escreve diretamente o estado dos pinos, sendo a porta utilizada para comunicação com dispositivos externos.
+    Utilizado para ler o estado lógico dos pinos de entrada, como sinal alto (1) ou sinal baixo (0).
 
 
 # Projetos
