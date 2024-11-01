@@ -69,12 +69,12 @@ void config_timer(void){
 }
 
 void __interrupt() rotina_isr(){
-    if (INTCONbits.TMR0IF){
-        INTCONbits.TMR0IF = 0;
-        n_overflow--;
-        if(n_overflow == 0){
-            LED1 = ~LED1;
-            n_overflow = tempo_desejado(NUM);
+    if (INTCONbits.TMR0IF){ // Verifica se houve uma interrupcao no Timer0
+        INTCONbits.TMR0IF = 0; 
+        n_overflow--; // Decrementa o numero de repeticoes necessarias de overflow
+        if(n_overflow == 0){  // Verifica se completou a repeticoes necessarias
+            LED1 = ~LED1; // Altera o estado do LED
+            n_overflow = tempo_desejado(NUM); // Retoma as repeticoes necessarias para a variavel, para repetir o ciclo. 
         }
     }
     }
@@ -178,7 +178,7 @@ unsigned int tempo_desejado (unsigned int NUM){
     double ciclo;
     ciclo = periodo / 2; // 2 Ciclos (1 Ligado e 1 Apagado)
      
-    n_overflow = ciclo / 0.0001275;  // 0.0001275 segundos = Tempo até ao o Timer0 atingir o overflow 
+    n_overflow = ciclo / 0.0001275;  // 0.0001275 segundos = Tempo atÃ© ao o Timer0 atingir o overflow 
    
     return n_overflow; // Numero de repeticoes de overflow necessarias para o Tempo que queremos
 }
