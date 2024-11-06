@@ -3,41 +3,30 @@
 
 #define _XTAL_FREQ 8000000
 
-#define BOTAO_IN TRISBbits.TRISB0 = 1;
-#define PORTC_OUT TRISC = 0b11000000;   // PINOS C0 a C5 COMO SAIDA
-#define PORTE_OUT TRISE = 0b100;       // PINOS E0 e E1 COMO SAIDA
+#define BOTAO_IN TRISBbits.TRISB0 = 1
+#define PORTC_OUT TRISC = 0b11000000  // PINOS C0 a C5 COMO SAIDA
+#define PORTE_OUT TRISE = 0b100       // PINOS E0 e E1 COMO SAIDA
 
 
-#define SEG_A LATC0 
-#define SEG_B LATC1
-#define SEG_C LATC2
-#define SEG_D LATC3
-#define SEG_E LATC4
-#define SEG_F LATC5
-#define SEG_G LATE0
-#define SEG_DP LATE1
+#define SEG_A LATCbits.LATC0
+#define SEG_B LATCbits.LATC1
+#define SEG_C LATCbits.LATC2
+#define SEG_D LATCbits.LATC3
+#define SEG_E LATCbits.LATC4
+#define SEG_F LATCbits.LATC5
+#define SEG_G LATEbits.LATE0
+#define SEG_DP LATEbits.LATE1
 
 void setup(void);
 unsigned char BCD_7SEG(unsigned int NUM);
+void __interrupt() rotina_ISR(void);
+unsigned char NUM = 0;  // CONTADOR
 
 void main(void){
     setup();
-    unsigned char NUM = 0;  // CONTADOR
-    unsigned char ATUAL_BOTAO = 0;
-    unsigned char ANTES_BOTAO = 0;
-    
+
     while(1){
-    ATUAL_BOTAO = PORTBbits.RB0;
-    
-    if (ANTES_BOTAO == 1 && ATUAL_BOTAO == 0){  // VERIFICAR MUDANÇA DE ESTADO NO BOTAO
-        __delay_ms(100);
-        NUM++;   // INCREMENTAR CONTADOR
-        if (NUM>9){  // VERIFICA SE CONTADOR > 9
-            NUM = 0;
-        }
-        BCD_7SEG(NUM);  // VALOR DO CONTADOR PARA A FUNCAO
-    }
-    ANTES_BOTAO = ATUAL_BOTAO;
+        BCD_7SEG(NUM);
 }
 }
 
@@ -46,6 +35,20 @@ void setup(void){
     BOTAO_IN;
     PORTC_OUT;
     PORTE_OUT;
+    INTCON2bits.INTEDG0 = 1; // Define qual a mudanÃ§a de nivel que vai gerar a interrupcao (0 para 1) ou (1 para 0) 
+    INTCONbits.INT0IE = 1;
+    INTCONbits.INT0IF = 0;
+    INTCONbits.GIE = 1;
+}
+
+void __interrupt() rotina_ISR(){
+    if (INTCONbits.INT0IF){
+            NUM++;
+            if (NUM > 9){
+                NUM = 0;
+            }
+        INTCONbits.INT0IF = 0;
+    }
 }
 
 // FUNCAO PARA ESCREVER NOS SEGMENTOS
