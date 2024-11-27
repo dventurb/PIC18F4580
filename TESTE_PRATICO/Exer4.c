@@ -1,19 +1,18 @@
 #include <xc.h>
 #include "config.h"
 
-#define _XTAL_FREQ 8000000
-
-#define LED1_OUT TRISDbits.TRISD7 = 0
-#define LED2_OUT TRISDbits.TRISD6 = 0
+// Definir as Entradas e SaÃ­das
+#define LED7_OUT TRISDbits.TRISD6 = 0
+#define LED8_OUT TRISDbits.TRISD7 = 0
 #define PORTC_OUT TRISC = 0b11000000
-#define PORTE_OUT TRISE = 0b100
+#define PORTE_OUT TRISE = 0b1100
 #define BOTAO_IN TRISBbits.TRISB0 = 1
 
-#define BOTAO1 PORTBbits.RB0
-
+// Definir as Macros dos LED7 e LED6
 #define LED1 LATDbits.LATD7 
 #define LED2 LATDbits.LATD6
 
+// Definir as Macros do Display de 7 Segmentos
 #define SEG_A LATCbits.LATC0 
 #define SEG_B LATCbits.LATC1
 #define SEG_C LATCbits.LATC2 
@@ -23,107 +22,88 @@
 #define SEG_G LATEbits.LATE0
 #define SEG_PD LATEbits.LATE1
 
+// FunÃ§Ãµes
 void setup(void);
-void __interrupt(low_priority) rotina_ISR(void);
-void __interrupt(high_priority) rotina_BOTAO(void);
-void config_timer(void);
-void config_btn_int(void);
-unsigned int N;
-unsigned int N_REPS_OVERFLOW;
-void BCD_7SEG(unsigned int N);
-void tempo_desejado(unsigned int N);
-unsigned int contador = 0;
-unsigned int botao_pressionado = 0;
+void num2disp(int n);
+int tempo_desejado(int n);
+void __interrupt(high_priority) high_ISR(void);
 
-void main(void) {
-    config_timer();
-    config_btn_int();
+// VariÃ¡veis 
+int n = 1;
+int repeticoes = 200;
+int repeticoes_btn = 1000;
+int botao_pressionado = 1;
+
+void main (void){
     setup();
-    N = 1;
-    LED1 = 1;
-    LED2 = 0;
-    BCD_7SEG(N);
-    tempo_desejado(N);
-    
-    while (1) {
+    while(1){
         
-     if (BOTAO1 == 1 && botao_pressionado == 1) {
-         
-        contador++;
-        __delay_ms(1000);
-        
-        if (contador >= 5){
-            N++;
-            botao_pressionado = 0;
-            contador = 0;
-            
-            if (N > 4) {
-              N = 1;
-              }
-            
-            BCD_7SEG(N);   
-            }
-        
-        } else {
-            contador = 0;
-        }
-        }
     }
+}
 
-void setup(void) {
+void setup(void){
     OSCCON = 0x73;
-    LED1_OUT;
-    LED2_OUT;
+    LED7_OUT;
+    LED8_OUT;
     PORTC_OUT;
     PORTE_OUT;
     BOTAO_IN;
-}
-
-void config_timer(void) {
-    RCONbits.IPEN = 1;
-    T0CONbits.T08BIT = 1;
+    num2disp(n);
+    
+    // ConfiguraÃ§Ãµes do BotÃ£o e do Timer
+    INTCONbits.INT0IE = 1;
+    INTCON2bits.INTEDG0 = 1;
+    INTCONbits.INT0IF = 0;
+    T0CONbits.T08BIT = 0;
     T0CONbits.T0CS = 0;
-    T0CONbits.PSA = 1;
-    T0CONbits.T0PS = 0b000;
-    INTCONbits.TMR0IE = 1;
+    T0CONbits.PSA = 0;
+    T0CONbits.T0PS = 0b000; 
+    TMR0 = 60535;
     INTCONbits.GIE = 1;
-    INTCON2bits.TMR0IP = 0;
-    INTCONbits.GIEL = 1;
+    INTCONbits.PEIE = 1;
+    RCONbits.IPEN = 1;
+    INTCON2bits.TMR0IP = 1;
+    INTCONbits.TMR0IE = 1;
+    INTCONbits.TMR0IF = 0;
     T0CONbits.TMR0ON = 1;
 }
 
-void config_btn_int(void){
-    INTCONbits.GIEH = 1;
-    INTCON2bits.INTEDG0 = 0; // Configuração para detectar a borda de descida do botão
-    INTCONbits.INT0IE = 1;
-    INTCONbits.INT0IF = 0;
-    INTCONbits.GIE = 1;
-    INTCON2bits.RBIP = 0;  // Configura a interrupção INT0 como de baixa prioridade
-}
-
-void __interrupt(low_priority) rotina_ISR(void) {
-    if (INTCONbits.TMR0IF) {
-        N_REPS_OVERFLOW--;
-        if (N_REPS_OVERFLOW == 0) {
+void __interrupt(high_priority) high_ISR(void){
+    if (INTCONbits.TMR0IE && INTCONbits.TMR0IF){
+        if(repeticoes){
+            repeticoes--;
+        }else{
             LED1 = ~LED1;
             LED2 = ~LED2;
-            tempo_desejado(N);        
+            repeticoes = tempo_desejado(n);
         }
-        
+        if (repeticoes_btn && PORTBbits.RB0){
+            repeticoes_btn--;
+        }else if (PORTBbits.RB0 == 0){
+            repeticoes_btn = 1000;
+        }else if (repeticoes_btn == 0 && PORTBbits.RB0 && botao_pressionado){
+            n++;
+            if (n > 4){
+                n = 1;
+                }
+                repeticoes_btn = 1000;
+                num2disp(n);
+                botao_pressionado = 0;
+        }
+        TMR0 = 60535;
         INTCONbits.TMR0IF = 0;
     }
-}
-
-void __interrupt(high_priority) rotina_BOTAO(void) {
-    if (INTCONbits.INT0IF) {
+    
+    if (INTCONbits.INT0IE && INTCONbits.INT0IF){
+        repeticoes_btn = 1000;
         botao_pressionado = 1;
+        INTCONbits.INT0IF = 0;
+        num2disp(n);
     }
-    INTCONbits.INT0IF = 0;
 }
 
-
-void BCD_7SEG(unsigned int N) {
-    switch (N) {
+void num2disp(int n){
+        switch (n) {
         case 1: 
             SEG_A = 0; SEG_B = 1; SEG_C = 1; SEG_D = 0;
             SEG_E = 0; SEG_F = 0; SEG_G = 0; SEG_PD = 0;
@@ -143,14 +123,22 @@ void BCD_7SEG(unsigned int N) {
     }
 }
 
-void tempo_desejado(unsigned int N) {
-    double periodo;
-    switch (N) {
-        case 1: periodo = 2; break;
-        case 2: periodo = 1; break;
-        case 3: periodo = 0.5; break;
-        case 4: periodo = 0.25; break;
+int tempo_desejado(int n){
+    
+    switch(n){
+        case 1:
+            return 200;
+            break;
+        case 2:
+            return 100;
+            break;
+        case 3:
+            return 50;
+            break;
+        case 4:
+            return 25;
+            break;
+        default:
+            break;
     }
-    double ciclo = periodo / 2;
-    N_REPS_OVERFLOW = (unsigned int)(ciclo / 0.0001275);
 }
