@@ -1,3 +1,14 @@
+/* 
+ * Calculando Tempo: 
+ *    Até atingir o overflow:
+ *      (1 / ((8MHz / 4) * 2 * (65535 - 60535)) = 0.005 segundo
+ *    Repetições necessárias: 
+ *      1 segundo / 00.5 segundo = 200 repetições
+ *      0.5 segundo / 00.5 segundo = 100 repetições
+ *      0.25 segundo / 00.5 segundo = 50 repetições 
+ *      0.125 segundo / 00.5 segundo = 25 repetições
+ */
+
 #include <xc.h>
 #include "config.h"
 
@@ -30,8 +41,8 @@ void __interrupt(high_priority) high_ISR(void);
 
 // Variáveis 
 int n = 1;
-int repeticoes = 200;
-int repeticoes_btn = 1000;
+int repeticoes = 200; // 1 segundo
+int repeticoes_btn = 1000; // 5 segundos
 int botao_pressionado = 1;
 
 void main (void){
@@ -68,6 +79,7 @@ void setup(void){
     T0CONbits.TMR0ON = 1;
 }
 
+// Rotina de Interrupções (Timer e Botão)
 void __interrupt(high_priority) high_ISR(void){
     if (INTCONbits.TMR0IE && INTCONbits.TMR0IF){
         if(repeticoes){
@@ -102,6 +114,7 @@ void __interrupt(high_priority) high_ISR(void){
     }
 }
 
+// Display de 7 Segmentos (1 ao 4)
 void num2disp(int n){
         switch (n) {
         case 1: 
@@ -123,20 +136,21 @@ void num2disp(int n){
     }
 }
 
+// Número de repetições 
 int tempo_desejado(int n){
     
     switch(n){
         case 1:
-            return 200;
+            return 200; // 1 segundo
             break;
         case 2:
-            return 100;
+            return 100; // 0,5 segundos
             break;
         case 3:
-            return 50;
+            return 50; // 0,25 segundos
             break;
         case 4:
-            return 25;
+            return 25; // 0,125 segundos
             break;
         default:
             break;
