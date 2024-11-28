@@ -89,7 +89,6 @@ void __interrupt() rotina_isr(){
         INTCONbits.TMR0IF = 0; 
     }
     
-    ATUAL_BOTAO = PORTBbits.RB0; 
     if (INTCONbits.INT0IF){
         NUM++;
         if (NUM > 5){
