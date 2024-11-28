@@ -1,3 +1,20 @@
+/* 
+ * Calculando Tempo: 
+ *    Configurações do Timer:
+ *       Modo: 16bits(65535) | Prescaler: 1:2 | Valor Inicial do Timer: 64285 (65535 - 1250) 
+ *    Até atingir o overflow:
+ *       (1 / ((8MHz / 4) * 2 * (65535 - 64285)) = 0.00125 segundo
+ *    Repetições necessárias: 
+ *       2^0Hz = 1 segundo / 0.00125 segundo = 800 repetições
+ *       2^1Hz = 0.5 segundo / 0.00125 segundo = 400 repetições
+ *       2^2Hz = 0.25 segundo / 0.00125 segundo = 200 repetições ¹
+ *       2^3Hz = 0.125 segundo / 0.00125 segundo = 100 repetições
+ *       2^4Hz = 0.0625 segundo / 0.00125 segundo = 50 repetições
+ *       2^5Hz = 0.015625 segundo / 0.00125 segundo = 100 repetições
+ */
+
+
+
 #include "config.h"
 #include <xc.h>
 
@@ -15,40 +32,25 @@
 #define SEG_F LATCbits.LATC5
 #define SEG_G LATEbits.LATE0
 #define SEG_PD LATEbits.LATE1
+
 #define LED1 LATDbits.LATD7 
 
-unsigned int NUM = 0;
 void setup(void);
-void config_timer(void);
-unsigned char BCD_7SEG(unsigned int NUM);
-unsigned int tempo_desejado(unsigned int NUM);
+void BCD_7SEG(int NUM);
+int tempo_desejado(int NUM);
 
-unsigned int n_overflow; // Repeticoes necessarias de overflow
+int repeticoes = 800; // Repeticoes necessarias para 2
+int NUM = 0;
+int ATUAL_BOTAO;
+int ANTES_BOTAO;
 
 
 void main(void){
-    LED1 = 1;
-    unsigned char ATUAL_BOTAO = 0;
-    unsigned char ANTES_BOTAO = 0;
     setup();
-    BCD_7SEG(NUM);
-    n_overflow = tempo_desejado(NUM);
-    config_timer();
-    
     while(1){
-    ATUAL_BOTAO = PORTBbits.RB0;
-    if (ANTES_BOTAO == 0 && ATUAL_BOTAO == 1){
-        NUM++;
-        if (NUM > 5){
-            NUM = 0;   
-        }
-        BCD_7SEG(NUM);
-        n_overflow = tempo_desejado(NUM);
+        
     }
-    ANTES_BOTAO = ATUAL_BOTAO;
-    __delay_ms(100); 
     }
-}
 
 void setup(void){
     OSCCON = 0x73;
@@ -56,30 +58,47 @@ void setup(void){
     LED1_OUT;
     SEG_PINOS_C;
     SEG_PINOS_E;
-}
-
-void config_timer(void){
-    T0CONbits.T08BIT = 1;
+    BCD_7SEG(NUM);
+    repeticoes = tempo_desejado(NUM);
+    
+    T0CONbits.T08BIT = 0;
     T0CONbits.T0CS = 0;
-    T0CONbits.PSA = 1;
+    T0CONbits.PSA = 0;
     T0CONbits.T0PS = 0b000;
+    TMR0 = 64910; // 1250 contagens
     INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCON2bits.TMR0IP = 1;
+    INTCONbits.TMR0IF = 0;
     INTCONbits.TMR0IE = 1;
     T0CONbits.TMR0ON = 1;
 }
 
 void __interrupt() rotina_isr(){
-    if (INTCONbits.TMR0IF){ // Verifica se houve uma interrupcao no Timer0
-        INTCONbits.TMR0IF = 0; 
-        n_overflow--; // Decrementa o numero de repeticoes necessarias de overflow
-        if(n_overflow == 0){  // Verifica se completou a repeticoes necessarias
+    if (INTCONbits.TMR0IE && INTCONbits.TMR0IF){ // Verifica se houve uma interrupcao no Timer0
+        if (repeticoes){       
+         repeticoes--; // Decrementa o numero de repeticoes necessarias
+        }else{  // Verifica se completou a repeticoes necessarias
             LED1 = ~LED1; // Altera o estado do LED
-            n_overflow = tempo_desejado(NUM); // Retoma as repeticoes necessarias para a variavel, para repetir o ciclo. 
+            repeticoes = tempo_desejado(NUM); // Retoma as repeticoes necessarias para a variavel, para repetir o ciclo. 
         }
+        TMR0 = 64910;
+        INTCONbits.TMR0IF = 0; 
     }
+    
+    ATUAL_BOTAO = PORTBbits.RB0; 
+    if (ATUAL_BOTAO == 1 && ANTES_BOTAO == 0){
+        NUM++;
+        if (NUM > 5){
+            NUM = 0;
+        }
+        BCD_7SEG(NUM);
+        repeticoes = tempo_desejado(NUM);
+    }
+    ANTES_BOTAO = ATUAL_BOTAO;
     }
 
-unsigned char BCD_7SEG(unsigned int NUM){
+void BCD_7SEG(int NUM){
     switch(NUM){
         case 0: 
             SEG_A = 1;
@@ -146,39 +165,27 @@ unsigned char BCD_7SEG(unsigned int NUM){
     }
 }
     
-unsigned int tempo_desejado (unsigned int NUM){
-    double potencia;
-    
+int tempo_desejado (int NUM){
     switch(NUM){
         case 0:
-            potencia = 1;
+            return 800;
             break;
         case 1:
-            potencia = 2;
+            return 400;
             break;
         case 2:
-            potencia = 4;
+            return 200;
             break;
         case 3:
-            potencia = 8;
+            return 100;
             break;
         case 4:
-            potencia = 16;
+            return 50;
             break;
         case 5:
-            potencia = 32;
+            return 25;
             break;
         default:
             break;
     }
-    
-    double periodo;
-    periodo = 1 / potencia;  
-    
-    double ciclo;
-    ciclo = periodo / 2; // 2 Ciclos (1 Ligado e 1 Apagado)
-     
-    n_overflow = ciclo / 0.0001275;  // 0.0001275 segundos = Tempo até ao o Timer0 atingir o overflow 
-   
-    return n_overflow; // Numero de repeticoes de overflow necessarias para o Tempo que queremos
 }
