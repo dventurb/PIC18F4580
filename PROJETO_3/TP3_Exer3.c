@@ -7,7 +7,7 @@
  *    Repetições necessárias: 
  *       2^0Hz = 1 segundo / 0.00125 segundo = 800 repetições
  *       2^1Hz = 0.5 segundo / 0.00125 segundo = 400 repetições
- *       2^2Hz = 0.25 segundo / 0.00125 segundo = 200 repetições ¹
+ *       2^2Hz = 0.25 segundo / 0.00125 segundo = 200 repetições 
  *       2^3Hz = 0.125 segundo / 0.00125 segundo = 100 repetições
  *       2^4Hz = 0.0625 segundo / 0.00125 segundo = 50 repetições
  *       2^5Hz = 0.015625 segundo / 0.00125 segundo = 100 repetições
