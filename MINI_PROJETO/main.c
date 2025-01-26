@@ -24,14 +24,18 @@
 #define RX_IN TRISCbits.RC7 = 1
 #define TX_OUT TRISCbits.RC6 = 0
 #define BUZZER_OUT TRISAbits.RA2 = 0
+#define VETOINHA_OUT TRISAbits.RA3 = 0
 
 // LEDS
 #define LED_1 LATDbits.LATD7  // +ARREFECIMENTO
 #define LED_2 LATDbits.LATD6  // -ARREFECIMENTO
-#define LED_3 LATDbits.LATD6  // AQUECIMENTO
+#define LED_3 LATDbits.LATD5  // AQUECIMENTO
 
 // BUZZER 
 #define BUZZER LATAbits.LATA2  // Buzzer Externo no Pino RA2
+
+// VETOINHA 
+#define VETOINHA LATAbits.LATA3 // Vetoinha Externa no Pino RA3
 
 // Display 7 Segmentos
 #define SEG_A LATCbits.LATC0
@@ -82,14 +86,17 @@ void main(void){
                 LED_1 = 1;
                 LED_2 = 0;
                 LED_3 = 0;
+                VETOINHA = 1;
             }else if(tempDesejada >= 22 && tempDesejada < 26){
                 LED_1 = 0;
                 LED_2 = 1;
                 LED_3 = 0;
+                VETOINHA = 0;
             }else if(tempDesejada >= 26){
                 LED_1 = 0;
                 LED_2 = 0;
                 LED_3 = 1;
+                VETOINHA = 0;
             }
         }
     }
@@ -105,13 +112,15 @@ void setup(void){
     RX_IN;
     TX_OUT;
     BUZZER_OUT;
+    VETOINHA_OUT;
+    LATD = 0x00;
+    VETOINHA = 0x00;
     configTimer();
     configAdc();
     configUsart();
     T0CONbits.TMR0ON = 1;
     ADCON0bits.ADON = 1;
-    LATD = 0x00;
-    enviarString("\r\nComandos Disponiveis: \r\nA   Modo Automatico\r\nM+   Manual +Temperatura\r\nM-   Manual -Temperatura\r\nOff   Desligar o A/C\r\n\r\n");
+    enviarString("\r\nComandos Disponiveis: \r\nA     Modo Automatico\r\nM+    Manual +Temperatura\r\nM-    Manual -Temperatura\r\nOff   Desligar o A/C\r\n\r\n");
 }
 
 // ROTINA DE INTERRUPÇÕES 
@@ -137,6 +146,7 @@ void __interrupt(high_priority) rotina_ISR(){
                 LED_1 = 0;
                 LED_2 = 0;
                 LED_3 = 0;
+                VETOINHA = 0;
                 BUZZER = 1;
                 __delay_ms(250);
                 BUZZER = 0;
@@ -147,7 +157,7 @@ void __interrupt(high_priority) rotina_ISR(){
                 automatico = false;
                 if (tempDesejada >= 18 && tempDesejada < 26){
                     tempDesejada++;
-                    sprintf(str, "%d", tempDesejada);
+                    sprintf(str, "A/C: %d", tempDesejada);
                     enviarString(str);
                 }
                 BUZZER = 1;
@@ -158,7 +168,7 @@ void __interrupt(high_priority) rotina_ISR(){
                 automatico = false;
                 if (tempDesejada > 18 && tempDesejada <= 26){
                     tempDesejada--;
-                    sprintf(str, "%d", tempDesejada);
+                    sprintf(str, "A/C: %d", tempDesejada);
                     enviarString(str);
                 }
                 BUZZER = 1;
@@ -206,16 +216,19 @@ void regularTemperatura(float temp){
         LED_1 = 1;
         LED_2 = 0;
         LED_3 = 0;
+        VETOINHA = 1;
     }else if (temp >= 20.0 && temp < 30.0){
         enviarString("A/C: 22.0");
         LED_1 = 0;
         LED_2 = 1;
         LED_3 = 0;
+        VETOINHA = 0;
     }else if (temp >= 0.0 && temp < 20.0){
         enviarString("A/C: 26.0");
         LED_1 = 0;
         LED_2 = 0;
         LED_3 = 1;
+        VETOINHA = 0;
     }
 }
 
@@ -228,7 +241,7 @@ float lerTemperatura(void){
 // Display de 7 Segmentos 
 void display7Seg(int num){
     const unsigned char numeros[10] = {
-        0x3F,  // 0
+        0x3F,  // 0 - 00111111
         0x06,  // 1
         0x6B,  // 2
         0x4F,  // 3
@@ -240,15 +253,16 @@ void display7Seg(int num){
         0x6F   // 9
     };
     if (num < 10){
+        unsigned char segmentos = numeros[num];
         // Máscara de bits (AND)
-        SEG_A = (numeros[num] & 0x01) ? 1 : 0;  // bit 0
-        SEG_B = (numeros[num] & 0x02) ? 1 : 0;  // bit 1
-        SEG_C = (numeros[num] & 0x04) ? 1 : 0;  // bit 2
-        SEG_D = (numeros[num] & 0x08) ? 1 : 0;  // bit 3
-        SEG_E = (numeros[num] & 0x10) ? 1 : 0;  // bit 4
-        SEG_F = (numeros[num] & 0x20) ? 1 : 0;  // bit 5
-        SEG_G = (numeros[num] & 0x40) ? 1 : 0;  // bit 6
-        SEG_DP = (numeros[num] & 0x80) ? 1: 0;  // bit 7      
+        SEG_A = (segmentos & 0x01) ? 1 : 0;  // bit 0
+        SEG_B = (segmentos & 0x02) ? 1 : 0;  // bit 1
+        SEG_C = (segmentos & 0x04) ? 1 : 0;  // bit 2
+        SEG_D = (segmentos & 0x08) ? 1 : 0;  // bit 3
+        SEG_E = (segmentos & 0x10) ? 1 : 0;  // bit 4
+        SEG_F = (segmentos & 0x20) ? 1 : 0;  // bit 5
+        SEG_G = (segmentos & 0x40) ? 1 : 0;  // bit 6
+        SEG_DP = (segmentos & 0x80) ? 1: 0;  // bit 7      
     }
 }
 
@@ -256,20 +270,19 @@ void display7Seg(int num){
 void displayTemperatura(float temp){
     int inteiro = (int)temp;
     int decimal = (int)((temp - inteiro) * 10);
-    int digitos[4];
-    digitos[0] = inteiro / 100;
-    digitos[1] = (inteiro / 10) % 10;
-    digitos[2] = inteiro % 10;
-    digitos[3] = decimal;
-    for (int i = 1; i < 3; i++){
+    int digitos[3];
+    digitos[0] = inteiro / 10;
+    digitos[1] = inteiro % 10;
+    digitos[2] = decimal;
+    for (int i = 0; i < 2; i++){
         display7Seg(digitos[i]);
-        if (i == 2){
+        if (i == 1){
             SEG_DP = 1;
         }
         __delay_ms(1000);
     }
     SEG_DP = 0;
-    display7Seg(digitos[3]);
+    display7Seg(digitos[2]);
     __delay_ms(1000);
     limparDisplay();
     __delay_ms(500);
