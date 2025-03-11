@@ -1,0 +1,949 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta> <reloc>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$/tmp/xcXkiFhMk/driver_tmp_15.o
+init CODE 0 E E 4 1 2
+reset_vec CODE 0 0 0 4 1 2
+config CONFIG 4 300000 300000 E 1 1
+$dist/default/production/TRABALHO_5.X.production.o
+cinit CODE 0 6BD6 6BD6 3A 1 2
+intcode_body CODE 0 70F8 70F8 1DE 1 2
+text0 CODE 0 6B28 6B28 C 1 2
+text1 CODE 0 6CBA 6CBA 66 1 2
+text3 CODE 0 72D6 72D6 33A 1 2
+text4 CODE 0 6B70 6B70 30 1 2
+text5 CODE 0 6B4A 6B4A 26 1 2
+text6 CODE 0 6C56 6C56 64 1 2
+text7 CODE 0 6D20 6D20 74 1 2
+text8 CODE 0 6BA0 6BA0 36 1 2
+text9 CODE 0 6B34 6B34 16 1 2
+text10 CODE 0 6F44 6F44 1B4 1 2
+text11 CODE 0 6E3E 6E3E 106 1 2
+text12 CODE 0 6C10 6C10 46 1 2
+text13 CODE 0 7A36 7A36 4B6 1 2
+text14 CODE 0 7610 7610 426 1 2
+text15 CODE 0 6D94 6D94 AA 1 2
+idataCOMRAM CODE 0 6B24 6B24 4 1 1
+cstackCOMRAM COMRAM 1 1 1 4D 1 1
+temp COMRAM 1 5E 5E 1 1 1
+intcode CODE 0 8 8 6 1 2
+dataCOMRAM COMRAM 1 5A 5A 4 1 1
+bssCOMRAM COMRAM 1 4E 4E C 1 1
+mediumconst MEDIUMCONST 0 7EEC 7EEC 14 1 2
+config CONFIG 4 300000 300000 E 1 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 60-5FF 1
+SFR D00-FFF 1
+BANK0 60-FF 1
+BANK1 100-1FF 1
+BANK2 200-2FF 1
+BANK3 300-3FF 1
+BANK4 400-4FF 1
+BANK5 500-5FF 1
+CONST 7F-6B23 1
+CONST 7F00-7F00 1
+IDLOC 200000-200007 1
+SMALLCONST 600-6B23 1
+SMALLCONST 7F00-7F00 1
+CODE 7F-6B23 1
+CODE 7F00-7F00 1
+BIGRAM 5F-5FF 1
+BIGSFR D00-FFF 1
+COMRAM 5F-5F 1
+EEDATA F00000-F000FF 1
+MEDIUMCONST 600-6B23 1
+MEDIUMCONST 7F00-7F00 1
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production/TRABALHO_5.X.production.o
+8 intcode CODE >1871:/tmp/xcXkiFhMk/driver_tmp_1.s
+8 intcode CODE >69:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6D94 text15 CODE >4:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fleq.c
+6D94 text15 CODE >7:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fleq.c
+6DC2 text15 CODE >8:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fleq.c
+6DD2 text15 CODE >9:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fleq.c
+6E00 text15 CODE >10:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fleq.c
+6E10 text15 CODE >11:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fleq.c
+6E3C text15 CODE >12:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fleq.c
+7610 text14 CODE >8:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7610 text14 CODE >17:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7616 text14 CODE >18:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+761C text14 CODE >19:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+762A text14 CODE >20:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+762C text14 CODE >24:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+763C text14 CODE >26:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+764C text14 CODE >28:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+765C text14 CODE >31:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+765E text14 CODE >33:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7662 text14 CODE >36:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7672 text14 CODE >39:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7678 text14 CODE >40:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+767E text14 CODE >41:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+768C text14 CODE >42:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+768E text14 CODE >45:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+769E text14 CODE >48:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+76AE text14 CODE >50:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+76BE text14 CODE >53:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+76C0 text14 CODE >54:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+76C4 text14 CODE >57:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+76D4 text14 CODE >58:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+76D4 text14 CODE >65:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+76F4 text14 CODE >66:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7708 text14 CODE >95:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7714 text14 CODE >96:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+771E text14 CODE >97:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7728 text14 CODE >98:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7734 text14 CODE >99:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7740 text14 CODE >100:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+774C text14 CODE >101:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7758 text14 CODE >102:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7764 text14 CODE >103:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7770 text14 CODE >104:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+777E text14 CODE >105:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+778A text14 CODE >106:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+779A text14 CODE >107:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+77A6 text14 CODE >108:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+77B6 text14 CODE >109:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+77C4 text14 CODE >110:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+77D0 text14 CODE >111:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+77E0 text14 CODE >112:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+77EC text14 CODE >113:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+77FC text14 CODE >114:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7808 text14 CODE >115:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7818 text14 CODE >116:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7824 text14 CODE >117:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+784E text14 CODE >145:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7884 text14 CODE >146:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7892 text14 CODE >149:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78AC text14 CODE >152:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78B0 text14 CODE >153:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78BA text14 CODE >154:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78C8 text14 CODE >155:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78CA text14 CODE >156:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78CA text14 CODE >157:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78D4 text14 CODE >158:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78DA text14 CODE >152:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78E8 text14 CODE >163:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78EA text14 CODE >164:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+78F8 text14 CODE >165:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7926 text14 CODE >166:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+792A text14 CODE >167:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+792E text14 CODE >168:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+792E text14 CODE >169:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7940 text14 CODE >173:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7940 text14 CODE >174:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7950 text14 CODE >175:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+795C text14 CODE >176:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+796A text14 CODE >177:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7994 text14 CODE >178:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7998 text14 CODE >183:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+79B2 text14 CODE >184:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+79C2 text14 CODE >185:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+79C6 text14 CODE >187:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+79E0 text14 CODE >188:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+79F0 text14 CODE >190:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+79F2 text14 CODE >191:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+79F6 text14 CODE >192:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+79F6 text14 CODE >194:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+79FA text14 CODE >195:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7A0A text14 CODE >196:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7A18 text14 CODE >197:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7A1A text14 CODE >199:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7A20 text14 CODE >201:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7A24 text14 CODE >203:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7A34 text14 CODE >205:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcmul.c
+7A36 text13 CODE >10:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A36 text13 CODE >21:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A3C text13 CODE >22:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A42 text13 CODE >23:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A50 text13 CODE >24:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A52 text13 CODE >28:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A62 text13 CODE >30:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A72 text13 CODE >32:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A82 text13 CODE >35:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A84 text13 CODE >37:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A86 text13 CODE >38:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A8A text13 CODE >41:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7A9A text13 CODE >44:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7AA0 text13 CODE >46:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7AB2 text13 CODE >47:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7AB4 text13 CODE >49:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7ABA text13 CODE >50:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7AC8 text13 CODE >51:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7ACA text13 CODE >55:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7ADA text13 CODE >57:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7AEA text13 CODE >59:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7AFA text13 CODE >62:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7AFC text13 CODE >64:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7AFE text13 CODE >65:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B02 text13 CODE >68:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B12 text13 CODE >75:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B24 text13 CODE >77:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B32 text13 CODE >78:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B36 text13 CODE >81:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B3A text13 CODE >82:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B3E text13 CODE >83:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B42 text13 CODE >84:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B46 text13 CODE >85:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B4A text13 CODE >86:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B4E text13 CODE >87:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B52 text13 CODE >88:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B56 text13 CODE >89:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B5A text13 CODE >90:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B5E text13 CODE >91:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B62 text13 CODE >92:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B66 text13 CODE >93:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B6A text13 CODE >94:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B6E text13 CODE >95:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B72 text13 CODE >98:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B74 text13 CODE >100:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7B9E text13 CODE >101:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7BBA text13 CODE >102:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7BCA text13 CODE >103:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7BCE text13 CODE >104:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7BD2 text13 CODE >106:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7BD2 text13 CODE >109:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7BE0 text13 CODE >110:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7BE8 text13 CODE >111:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7BEC text13 CODE >113:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7BF0 text13 CODE >115:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7BFE text13 CODE >116:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C00 text13 CODE >118:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C0A text13 CODE >119:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C0C text13 CODE >106:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C0C text13 CODE >120:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C1E text13 CODE >121:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C1E text13 CODE >124:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C2C text13 CODE >127:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C3C text13 CODE >128:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C50 text13 CODE >132:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C60 text13 CODE >134:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C6E text13 CODE >135:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C7C text13 CODE >136:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C84 text13 CODE >137:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C88 text13 CODE >139:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C8C text13 CODE >141:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C9A text13 CODE >142:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7C9C text13 CODE >144:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7CA6 text13 CODE >145:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7CAC text13 CODE >153:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7CD2 text13 CODE >154:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D02 text13 CODE >155:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D06 text13 CODE >156:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D08 text13 CODE >157:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D18 text13 CODE >158:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D28 text13 CODE >162:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D38 text13 CODE >163:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D38 text13 CODE >166:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D5E text13 CODE >167:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D72 text13 CODE >172:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D7C text13 CODE >173:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D8A text13 CODE >174:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D8C text13 CODE >176:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D9A text13 CODE >177:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7D9E text13 CODE >178:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DA2 text13 CODE >180:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DA6 text13 CODE >182:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DB6 text13 CODE >183:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DB8 text13 CODE >171:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DC6 text13 CODE >186:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DC6 text13 CODE >192:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DC8 text13 CODE >193:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DD6 text13 CODE >194:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DEC text13 CODE >195:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DF0 text13 CODE >196:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DF4 text13 CODE >197:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7DF4 text13 CODE >198:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7E06 text13 CODE >202:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7E06 text13 CODE >203:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7E16 text13 CODE >204:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7E22 text13 CODE >205:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7E30 text13 CODE >206:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7E5A text13 CODE >207:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7E6A text13 CODE >208:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7E6C text13 CODE >215:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7E8C text13 CODE >216:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7E9C text13 CODE >218:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7EAC text13 CODE >219:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7EAE text13 CODE >221:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7EAE text13 CODE >225:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7EBC text13 CODE >226:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7EBE text13 CODE >227:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7EC2 text13 CODE >230:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7EC4 text13 CODE >232:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7ECA text13 CODE >233:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7ED8 text13 CODE >234:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7EDA text13 CODE >236:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+7EEA text13 CODE >237:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+6C10 text12 CODE >245:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+6C10 text12 CODE >248:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+6C20 text12 CODE >249:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+6C54 text12 CODE >250:/opt/microchip/xc8/v2.50/pic/sources/c90/common/sprcadd.c
+6E3E text11 CODE >43:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6E3E text11 CODE >47:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6E54 text11 CODE >48:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6E68 text11 CODE >49:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6E92 text11 CODE >50:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6E94 text11 CODE >51:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6EA4 text11 CODE >52:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6EA8 text11 CODE >53:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6EB6 text11 CODE >54:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6ECE text11 CODE >57:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6ED8 text11 CODE >58:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6EE2 text11 CODE >60:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6EF6 text11 CODE >63:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6F00 text11 CODE >64:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6F02 text11 CODE >62:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6F12 text11 CODE >67:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6F22 text11 CODE >68:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6F32 text11 CODE >69:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6F42 text11 CODE >70:/opt/microchip/xc8/v2.50/pic/sources/c90/common/fltol.c
+6F44 text10 CODE >10:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6F46 text10 CODE >15:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6F64 text10 CODE >16:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6F96 text10 CODE >17:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6F9A text10 CODE >18:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6F9A text10 CODE >19:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6FAA text10 CODE >21:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6FC0 text10 CODE >22:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6FD4 text10 CODE >23:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6FD8 text10 CODE >24:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6FDC text10 CODE >25:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6FDE text10 CODE >26:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6FE8 text10 CODE >24:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+701A text10 CODE >29:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+701C text10 CODE >30:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+7028 text10 CODE >31:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+7032 text10 CODE >28:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+7032 text10 CODE >32:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+7064 text10 CODE >34:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+7066 text10 CODE >35:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+7070 text10 CODE >33:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+708E text10 CODE >37:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+709C text10 CODE >38:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+709E text10 CODE >39:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+70A2 text10 CODE >40:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+70C6 text10 CODE >41:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+70E4 text10 CODE >42:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+70E6 text10 CODE >43:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+70F6 text10 CODE >44:/opt/microchip/xc8/v2.50/pic/sources/c90/common/xxtofl.c
+6B34 text9 CODE >97:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6B36 text9 CODE >98:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6B44 text9 CODE >99:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6B48 text9 CODE >100:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6BA0 text8 CODE >102:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6BA0 text8 CODE >103:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6BA4 text8 CODE >104:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6BB0 text8 CODE >105:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6BB2 text8 CODE >103:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6BC8 text8 CODE >107:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6BCE text8 CODE >108:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6BD4 text8 CODE >109:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6D20 text7 CODE >7:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D20 text7 CODE >13:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D28 text7 CODE >14:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D3A text7 CODE >15:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D3E text7 CODE >16:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D42 text7 CODE >17:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D48 text7 CODE >18:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D4A text7 CODE >16:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D58 text7 CODE >21:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D5E text7 CODE >22:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D74 text7 CODE >23:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D7C text7 CODE >24:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D7E text7 CODE >26:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D84 text7 CODE >27:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D8A text7 CODE >28:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D8A text7 CODE >29:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6D92 text7 CODE >30:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwdiv.c
+6C56 text6 CODE >7:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6C56 text6 CODE >12:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6C68 text6 CODE >13:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6C6C text6 CODE >14:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6C70 text6 CODE >15:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6C76 text6 CODE >16:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6C78 text6 CODE >14:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6C86 text6 CODE >19:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6C9C text6 CODE >20:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6CA4 text6 CODE >21:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6CAA text6 CODE >22:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6CB0 text6 CODE >23:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6CB0 text6 CODE >24:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6CB8 text6 CODE >25:/opt/microchip/xc8/v2.50/pic/sources/c90/common/lwmod.c
+6B4A text5 CODE >15:/opt/microchip/xc8/v2.50/pic/sources/c90/common/Umul16.c
+6B4A text5 CODE >37:/opt/microchip/xc8/v2.50/pic/sources/c90/common/Umul16.c
+6B56 text5 CODE >38:/opt/microchip/xc8/v2.50/pic/sources/c90/common/Umul16.c
+6B5E text5 CODE >39:/opt/microchip/xc8/v2.50/pic/sources/c90/common/Umul16.c
+6B66 text5 CODE >52:/opt/microchip/xc8/v2.50/pic/sources/c90/common/Umul16.c
+6B6E text5 CODE >53:/opt/microchip/xc8/v2.50/pic/sources/c90/common/Umul16.c
+6B70 text4 CODE >8:/opt/microchip/xc8/v2.50/pic/sources/c90/common/isdigit.c
+6B72 text4 CODE >14:/opt/microchip/xc8/v2.50/pic/sources/c90/common/isdigit.c
+6B9E text4 CODE >15:/opt/microchip/xc8/v2.50/pic/sources/c90/common/isdigit.c
+72D6 text3 CODE >505:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+72D6 text3 CODE >550:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+72DA text3 CODE >553:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+72DE text3 CODE >555:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+72F0 text3 CODE >558:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+72FC text3 CODE >559:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7300 text3 CODE >563:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7308 text3 CODE >565:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+730E text3 CODE >597:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7310 text3 CODE >598:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7314 text3 CODE >568:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7322 text3 CODE >568:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+732C text3 CODE >614:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+734A text3 CODE >615:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7352 text3 CODE >617:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+736E text3 CODE >618:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7394 text3 CODE >619:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+73B2 text3 CODE >661:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+73C8 text3 CODE >661:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+73D0 text3 CODE >661:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+73D8 text3 CODE >661:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+73E2 text3 CODE >1285:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+73F4 text3 CODE >1287:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7402 text3 CODE >1288:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7406 text3 CODE >1289:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+740E text3 CODE >1331:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7412 text3 CODE >1332:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7440 text3 CODE >1331:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7454 text3 CODE >1371:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+747C text3 CODE >1372:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7482 text3 CODE >1407:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+74A6 text3 CODE >1408:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+74B2 text3 CODE >1410:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+74BA text3 CODE >1413:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+74C8 text3 CODE >1418:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+74DE text3 CODE >1419:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+74EA text3 CODE >1441:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+74FC text3 CODE >1443:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7508 text3 CODE >1444:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7524 text3 CODE >1454:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7536 text3 CODE >1456:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7542 text3 CODE >1457:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+755A text3 CODE >1464:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7570 text3 CODE >1465:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+757C text3 CODE >1498:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7580 text3 CODE >1500:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7584 text3 CODE >1515:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+75C6 text3 CODE >1550:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+75D2 text3 CODE >1500:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+75E4 text3 CODE >553:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+7606 text3 CODE >1564:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+760E text3 CODE >1567:/opt/microchip/xc8/v2.50/pic/sources/c90/common/doprnt.c
+70F8 intcode_body CODE >69:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+711A intcode_body CODE >70:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+7128 intcode_body CODE >71:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+7130 intcode_body CODE >72:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+7132 intcode_body CODE >73:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+7134 intcode_body CODE >76:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+7150 intcode_body CODE >77:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+7162 intcode_body CODE >78:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+71AE intcode_body CODE >81:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+71CA intcode_body CODE >84:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+7246 intcode_body CODE >87:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+7278 intcode_body CODE >88:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+7288 intcode_body CODE >89:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+72A8 intcode_body CODE >90:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+72B0 intcode_body CODE >93:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+72B2 intcode_body CODE >95:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CBA text1 CODE >27:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CBA text1 CODE >28:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CBE text1 CODE >29:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CC0 text1 CODE >30:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CC2 text1 CODE >33:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CC6 text1 CODE >34:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CC8 text1 CODE >35:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CCA text1 CODE >36:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CCC text1 CODE >37:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CCE text1 CODE >38:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CD0 text1 CODE >39:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CD2 text1 CODE >40:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CD4 text1 CODE >42:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CD6 text1 CODE >43:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CD8 text1 CODE >46:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CDA text1 CODE >47:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CDC text1 CODE >48:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CDE text1 CODE >49:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CE6 text1 CODE >50:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CEE text1 CODE >51:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CF0 text1 CODE >52:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CF2 text1 CODE >53:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CF4 text1 CODE >54:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CF6 text1 CODE >57:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6CFE text1 CODE >58:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6D02 text1 CODE >59:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6D06 text1 CODE >60:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6D0E text1 CODE >61:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6D16 text1 CODE >62:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6D18 text1 CODE >63:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6D1A text1 CODE >65:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6D1C text1 CODE >66:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6D1E text1 CODE >67:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6B28 text0 CODE >20:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6B28 text0 CODE >21:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6B2C text0 CODE >22:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6B2C text0 CODE >24:/home/user/MPLABXProjects/TRABALHO_5.X/TP5_Exer3.c
+6BD6 cinit CODE >1068:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BD6 cinit CODE >1070:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BD6 cinit CODE >1073:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BD6 cinit CODE >1097:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BD8 cinit CODE >1098:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BDA cinit CODE >1099:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BDC cinit CODE >1100:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BDE cinit CODE >1101:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BE0 cinit CODE >1102:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BE2 cinit CODE >1103:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BE6 cinit CODE >1104:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BEA cinit CODE >1105:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BEA cinit CODE >1106:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BEC cinit CODE >1107:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BF0 cinit CODE >1108:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BF2 cinit CODE >1109:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BF4 cinit CODE >1110:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BF6 cinit CODE >1114:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BFA cinit CODE >1115:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BFC cinit CODE >1116:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BFC cinit CODE >1117:/tmp/xcXkiFhMk/driver_tmp_1.s
+6BFE cinit CODE >1118:/tmp/xcXkiFhMk/driver_tmp_1.s
+6C00 cinit CODE >1119:/tmp/xcXkiFhMk/driver_tmp_1.s
+6C02 cinit CODE >1125:/tmp/xcXkiFhMk/driver_tmp_1.s
+6C02 cinit CODE >1127:/tmp/xcXkiFhMk/driver_tmp_1.s
+6C04 cinit CODE >1128:/tmp/xcXkiFhMk/driver_tmp_1.s
+6C06 cinit CODE >1130:/tmp/xcXkiFhMk/driver_tmp_1.s
+6C08 cinit CODE >1131:/tmp/xcXkiFhMk/driver_tmp_1.s
+6C0A cinit CODE >1132:/tmp/xcXkiFhMk/driver_tmp_1.s
+6C0C cinit CODE >1133:/tmp/xcXkiFhMk/driver_tmp_1.s
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___lwmod@counter C 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lmediumconst 7EEC 0 MEDIUMCONST 0 mediumconst dist/default/production/TRABALHO_5.X.production.o
+__Hspace_0 7F00 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Hspace_1 5F 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Hspace_2 0 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Hspace_4 60000E 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Hibigdata 0 0 CODE 0 ibigdata dist/default/production/TRABALHO_5.X.production.o
+__mediumconst 7EEC 0 MEDIUMCONST 0 mediumconst /tmp/xcXkiFhMk/driver_tmp_15.o
+__Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/TRABALHO_5.X.production.o
+__L__absolute__ 0 0 ABS 0 __absolute__ dist/default/production/TRABALHO_5.X.production.o
+_TX_USART 6B34 0 CODE 0 text9 dist/default/production/TRABALHO_5.X.production.o
+rotinaISR@tensaoDecimal 46 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/TRABALHO_5.X.production.o
+_TMR0 FD6 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+___sp 0 0 STACK 2 stack /tmp/xcXkiFhMk/driver_tmp_15.o
+_main 6B28 0 CODE 0 text0 dist/default/production/TRABALHO_5.X.production.o
+btemp 5E 0 COMRAM 1 temp dist/default/production/TRABALHO_5.X.production.o
+___stack_hi 0 0 STACK 2 stack /tmp/xcXkiFhMk/driver_tmp_15.o
+___stack_lo 0 0 STACK 2 stack /tmp/xcXkiFhMk/driver_tmp_15.o
+start E 0 CODE 0 init /tmp/xcXkiFhMk/driver_tmp_15.o
+___flmul@aexp 2A 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___flmul@bexp 2B 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___flmul@prod 2C 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___flmul@sign 25 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___flmul@temp 30 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__end_of_TX_USART 6B4A 0 CODE 0 text9 dist/default/production/TRABALHO_5.X.production.o
+?___wmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Hpowerup E 0 CODE 0 powerup dist/default/production/TRABALHO_5.X.production.o
+_T0CONbits FD5 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+ttemp5 5F 0 COMRAM 1 temp dist/default/production/TRABALHO_5.X.production.o
+ttemp6 62 0 COMRAM 1 temp dist/default/production/TRABALHO_5.X.production.o
+ttemp7 66 0 COMRAM 1 temp dist/default/production/TRABALHO_5.X.production.o
+__HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__accesstop 60 0 ABS 0 - /tmp/xcXkiFhMk/driver_tmp_15.o
+intlevel0 0 0 CODE 0 text /tmp/xcXkiFhMk/driver_tmp_15.o
+intlevel1 0 0 CODE 0 text /tmp/xcXkiFhMk/driver_tmp_15.o
+intlevel2 0 0 CODE 0 text /tmp/xcXkiFhMk/driver_tmp_15.o
+intlevel3 0 0 CODE 0 text /tmp/xcXkiFhMk/driver_tmp_15.o
+__LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/TRABALHO_5.X.production.o
+wtemp8 5F 0 COMRAM 1 temp dist/default/production/TRABALHO_5.X.production.o
+__Hifardata 0 0 CODE 0 ifardata dist/default/production/TRABALHO_5.X.production.o
+__Hclrtext 0 0 ABS 0 clrtext dist/default/production/TRABALHO_5.X.production.o
+__pidataCOMRAM 6B24 0 CODE 0 idataCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+_ADRESH FC4 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+_ADRESL FC3 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXkiFhMk/driver_tmp_15.o
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXkiFhMk/driver_tmp_15.o
+__LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Hintcode_body 0 0 ABS 0 intcode_body dist/default/production/TRABALHO_5.X.production.o
+__end_of___fleq 6E3E 0 CODE 0 text15 dist/default/production/TRABALHO_5.X.production.o
+__end_of___wmul 6B70 0 CODE 0 text5 dist/default/production/TRABALHO_5.X.production.o
+__Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/TRABALHO_5.X.production.o
+__Hmediumconst 7F00 0 MEDIUMCONST 0 mediumconst dist/default/production/TRABALHO_5.X.production.o
+__Hintcodelo E 0 CODE 0 intcodelo dist/default/production/TRABALHO_5.X.production.o
+rotinaISR@tensaoUnidade 48 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___lwmod@divisor A 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__end_of___fladd 7EEC 0 CODE 0 text13 dist/default/production/TRABALHO_5.X.production.o
+__end_of___flmul 7A36 0 CODE 0 text14 dist/default/production/TRABALHO_5.X.production.o
+__end_of___flsub 6C56 0 CODE 0 text12 dist/default/production/TRABALHO_5.X.production.o
+__end_of___fltol 6F44 0 CODE 0 text11 dist/default/production/TRABALHO_5.X.production.o
+__end_of___lwdiv 6D94 0 CODE 0 text7 dist/default/production/TRABALHO_5.X.production.o
+__end_of___lwmod 6CBA 0 CODE 0 text6 dist/default/production/TRABALHO_5.X.production.o
+_dpowers 7EED 0 MEDIUMCONST 0 mediumconst dist/default/production/TRABALHO_5.X.production.o
+___lwdiv@quotient 5 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__LidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___fladd@a 5 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___fladd@b 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___flmul@a 1D 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___flmul@b 19 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___flsub@a 15 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___flsub@b 11 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___lwmod@dividend 8 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lintcodelo E 0 CODE 0 intcodelo dist/default/production/TRABALHO_5.X.production.o
+start_initialization 6BD6 0 CODE 0 cinit dist/default/production/TRABALHO_5.X.production.o
+TX_USART@data 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+_OSCCON FD3 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production/TRABALHO_5.X.production.o
+_TRISAbits F92 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+_TRISCbits F94 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+___rparam_used 1 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__pcstackBANK0 0 0 BANK0 1 cstackBANK0 dist/default/production/TRABALHO_5.X.production.o
+isa$xinst 0 0 ABS 0 - /tmp/xcXkiFhMk/driver_tmp_15.o
+__Hbank0 0 0 ABS 0 bank0 dist/default/production/TRABALHO_5.X.production.o
+__Hbank1 0 0 ABS 0 bank1 dist/default/production/TRABALHO_5.X.production.o
+__Hbank2 0 0 ABS 0 bank2 dist/default/production/TRABALHO_5.X.production.o
+__Hbank3 0 0 ABS 0 bank3 dist/default/production/TRABALHO_5.X.production.o
+__Hbank4 0 0 ABS 0 bank4 dist/default/production/TRABALHO_5.X.production.o
+__Hbank5 0 0 ABS 0 bank5 dist/default/production/TRABALHO_5.X.production.o
+__Hcinit 0 0 ABS 0 cinit dist/default/production/TRABALHO_5.X.production.o
+__Hconst 0 0 CONST 0 const dist/default/production/TRABALHO_5.X.production.o
+__Hidata 0 0 CODE 0 idata dist/default/production/TRABALHO_5.X.production.o
+__Hidloc 0 0 ABS 0 idloc dist/default/production/TRABALHO_5.X.production.o
+__Hnvbit 0 0 COMRAM 1 nvbit dist/default/production/TRABALHO_5.X.production.o
+__Hparam 0 0 COMRAM 1 rparam dist/default/production/TRABALHO_5.X.production.o
+__Hrdata 0 0 COMRAM 1 rdata dist/default/production/TRABALHO_5.X.production.o
+__Hstack 0 0 STACK 2 stack dist/default/production/TRABALHO_5.X.production.o
+__Htext0 0 0 ABS 0 text0 dist/default/production/TRABALHO_5.X.production.o
+__Htext1 0 0 ABS 0 text1 dist/default/production/TRABALHO_5.X.production.o
+__Htext3 0 0 ABS 0 text3 dist/default/production/TRABALHO_5.X.production.o
+__Htext4 0 0 ABS 0 text4 dist/default/production/TRABALHO_5.X.production.o
+__Htext5 0 0 ABS 0 text5 dist/default/production/TRABALHO_5.X.production.o
+__Htext6 0 0 ABS 0 text6 dist/default/production/TRABALHO_5.X.production.o
+__Htext7 0 0 ABS 0 text7 dist/default/production/TRABALHO_5.X.production.o
+__Htext8 0 0 ABS 0 text8 dist/default/production/TRABALHO_5.X.production.o
+__Htext9 0 0 ABS 0 text9 dist/default/production/TRABALHO_5.X.production.o
+___lwdiv@counter 7 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/TRABALHO_5.X.production.o
+__Hbigram 0 0 ABS 0 bigram dist/default/production/TRABALHO_5.X.production.o
+__Hbigsfr 0 0 ABS 0 bigsfr dist/default/production/TRABALHO_5.X.production.o
+__smallconst 0 0 SMALLCONST 0 smallconst /tmp/xcXkiFhMk/driver_tmp_15.o
+___xxtofl@arg B 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___xxtofl@exp A 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___xxtofl@val 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__end_of_sprintf 7610 0 CODE 0 text3 dist/default/production/TRABALHO_5.X.production.o
+__Hcomram 0 0 ABS 0 comram dist/default/production/TRABALHO_5.X.production.o
+__Hconfig 30000E 0 CONFIG 4 config dist/default/production/TRABALHO_5.X.production.o
+__Lbank0 0 0 ABS 0 bank0 dist/default/production/TRABALHO_5.X.production.o
+__Lbank1 0 0 ABS 0 bank1 dist/default/production/TRABALHO_5.X.production.o
+__Lbank2 0 0 ABS 0 bank2 dist/default/production/TRABALHO_5.X.production.o
+__Lbank3 0 0 ABS 0 bank3 dist/default/production/TRABALHO_5.X.production.o
+__Lbank4 0 0 ABS 0 bank4 dist/default/production/TRABALHO_5.X.production.o
+__Lbank5 0 0 ABS 0 bank5 dist/default/production/TRABALHO_5.X.production.o
+__end_of_isdigit 6BA0 0 CODE 0 text4 dist/default/production/TRABALHO_5.X.production.o
+__Lcinit 0 0 ABS 0 cinit dist/default/production/TRABALHO_5.X.production.o
+__Lconst 0 0 CONST 0 const dist/default/production/TRABALHO_5.X.production.o
+__Lidata 0 0 CODE 0 idata dist/default/production/TRABALHO_5.X.production.o
+__Lidloc 0 0 ABS 0 idloc dist/default/production/TRABALHO_5.X.production.o
+__Lnvbit 0 0 COMRAM 1 nvbit dist/default/production/TRABALHO_5.X.production.o
+__Lparam 0 0 COMRAM 1 rparam dist/default/production/TRABALHO_5.X.production.o
+__Lrdata 0 0 COMRAM 1 rdata dist/default/production/TRABALHO_5.X.production.o
+__Lstack 0 0 STACK 2 stack dist/default/production/TRABALHO_5.X.production.o
+__Ltext0 0 0 ABS 0 text0 dist/default/production/TRABALHO_5.X.production.o
+__Ltext1 0 0 ABS 0 text1 dist/default/production/TRABALHO_5.X.production.o
+__Ltext3 0 0 ABS 0 text3 dist/default/production/TRABALHO_5.X.production.o
+__Ltext4 0 0 ABS 0 text4 dist/default/production/TRABALHO_5.X.production.o
+__Ltext5 0 0 ABS 0 text5 dist/default/production/TRABALHO_5.X.production.o
+__Ltext6 0 0 ABS 0 text6 dist/default/production/TRABALHO_5.X.production.o
+__Ltext7 0 0 ABS 0 text7 dist/default/production/TRABALHO_5.X.production.o
+__Ltext8 0 0 ABS 0 text8 dist/default/production/TRABALHO_5.X.production.o
+__Ltext9 0 0 ABS 0 text9 dist/default/production/TRABALHO_5.X.production.o
+__Hfarbss 0 0 FARRAM 0 farbss dist/default/production/TRABALHO_5.X.production.o
+___flmul@grs 26 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lintcode_body 0 0 ABS 0 intcode_body dist/default/production/TRABALHO_5.X.production.o
+_INTCONbits FF2 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Habs1 0 0 ABS 0 abs1 dist/default/production/TRABALHO_5.X.production.o
+__Hdata 0 0 ABS 0 data dist/default/production/TRABALHO_5.X.production.o
+__Hheap 0 0 HEAP 7 heap dist/default/production/TRABALHO_5.X.production.o
+__Hinit 12 0 CODE 0 init dist/default/production/TRABALHO_5.X.production.o
+__Hrbit 0 0 COMRAM 1 rbit dist/default/production/TRABALHO_5.X.production.o
+__Hrbss 0 0 COMRAM 1 rbss dist/default/production/TRABALHO_5.X.production.o
+__Htemp 5F 0 COMRAM 1 temp dist/default/production/TRABALHO_5.X.production.o
+__Htext 0 0 ABS 0 text dist/default/production/TRABALHO_5.X.production.o
+__Labs1 0 0 ABS 0 abs1 dist/default/production/TRABALHO_5.X.production.o
+__Ldata 0 0 ABS 0 data dist/default/production/TRABALHO_5.X.production.o
+__Lheap 0 0 HEAP 7 heap dist/default/production/TRABALHO_5.X.production.o
+__Linit E 0 CODE 0 init dist/default/production/TRABALHO_5.X.production.o
+__Lrbit 0 0 COMRAM 1 rbit dist/default/production/TRABALHO_5.X.production.o
+__Lrbss 0 0 COMRAM 1 rbss dist/default/production/TRABALHO_5.X.production.o
+__Ltemp 5E 0 COMRAM 1 temp dist/default/production/TRABALHO_5.X.production.o
+__Ltext 0 0 ABS 0 text dist/default/production/TRABALHO_5.X.production.o
+___fleq 6D94 0 CODE 0 text15 dist/default/production/TRABALHO_5.X.production.o
+___wmul 6B4A 0 CODE 0 text5 dist/default/production/TRABALHO_5.X.production.o
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/TRABALHO_5.X.production.o
+int$flags 5E 0 COMRAM 1 temp dist/default/production/TRABALHO_5.X.production.o
+__HcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+_tensaoAnterior 5A 0 COMRAM 1 dataCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Hintret 0 0 ABS 0 intret dist/default/production/TRABALHO_5.X.production.o
+__Hirdata 0 0 CODE 0 irdata dist/default/production/TRABALHO_5.X.production.o
+__S0 7F00 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__S1 5F 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__S4 0 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__S5 0 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+_str 50 0 COMRAM 1 bssCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__HidataCOMRAM 0 0 ABS 0 idataCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production/TRABALHO_5.X.production.o
+__Hnvrram 0 0 COMRAM 1 nvrram dist/default/production/TRABALHO_5.X.production.o
+sprintf@val 19 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___xxtofl 6F44 0 CODE 0 text10 dist/default/production/TRABALHO_5.X.production.o
+int_func 70F8 0 CODE 0 intcode_body dist/default/production/TRABALHO_5.X.production.o
+__Lintentry 0 0 ABS 0 intentry dist/default/production/TRABALHO_5.X.production.o
+__Hramtop 600 0 RAM 0 ramtop dist/default/production/TRABALHO_5.X.production.o
+__Hrparam 0 0 COMRAM 1 rparam dist/default/production/TRABALHO_5.X.production.o
+__end_of___xxtofl 70F8 0 CODE 0 text10 dist/default/production/TRABALHO_5.X.production.o
+__activetblptr 2 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Hstruct 0 0 COMRAM 1 struct dist/default/production/TRABALHO_5.X.production.o
+__Htext10 0 0 ABS 0 text10 dist/default/production/TRABALHO_5.X.production.o
+__Htext11 0 0 ABS 0 text11 dist/default/production/TRABALHO_5.X.production.o
+__Htext12 0 0 ABS 0 text12 dist/default/production/TRABALHO_5.X.production.o
+__Htext13 0 0 ABS 0 text13 dist/default/production/TRABALHO_5.X.production.o
+__Htext14 0 0 ABS 0 text14 dist/default/production/TRABALHO_5.X.production.o
+__Htext15 0 0 ABS 0 text15 dist/default/production/TRABALHO_5.X.production.o
+_RCSTAbits FAB 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+_PIE1bits F9D 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+sprintf@flag 1B 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+sprintf@prec 18 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___fladd@signs D 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__ptext10 6F44 0 CODE 0 text10 dist/default/production/TRABALHO_5.X.production.o
+__ptext11 6E3E 0 CODE 0 text11 dist/default/production/TRABALHO_5.X.production.o
+__ptext12 6C10 0 CODE 0 text12 dist/default/production/TRABALHO_5.X.production.o
+__ptext13 7A36 0 CODE 0 text13 dist/default/production/TRABALHO_5.X.production.o
+__ptext14 7610 0 CODE 0 text14 dist/default/production/TRABALHO_5.X.production.o
+__ptext15 6D94 0 CODE 0 text15 dist/default/production/TRABALHO_5.X.production.o
+___fladd 7A36 0 CODE 0 text13 dist/default/production/TRABALHO_5.X.production.o
+___flmul 7610 0 CODE 0 text14 dist/default/production/TRABALHO_5.X.production.o
+___flsub 6C10 0 CODE 0 text12 dist/default/production/TRABALHO_5.X.production.o
+___fltol 6E3E 0 CODE 0 text11 dist/default/production/TRABALHO_5.X.production.o
+__pintcode_body 70F8 0 CODE 0 intcode_body dist/default/production/TRABALHO_5.X.production.o
+___lwdiv 6D20 0 CODE 0 text7 dist/default/production/TRABALHO_5.X.production.o
+___lwmod 6C56 0 CODE 0 text6 dist/default/production/TRABALHO_5.X.production.o
+enviarString@string 2 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lbigbss 0 0 BIGRAM 1 bigbss dist/default/production/TRABALHO_5.X.production.o
+__Lbigram 0 0 ABS 0 bigram dist/default/production/TRABALHO_5.X.production.o
+__Lbigsfr 0 0 ABS 0 bigsfr dist/default/production/TRABALHO_5.X.production.o
+__Lcomram 0 0 ABS 0 comram dist/default/production/TRABALHO_5.X.production.o
+__Lconfig 0 0 CONFIG 4 config dist/default/production/TRABALHO_5.X.production.o
+___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lsivt_hi 0 0 ABS 0 sivt_hi dist/default/production/TRABALHO_5.X.production.o
+__Lsivt_lo 0 0 ABS 0 sivt_lo dist/default/production/TRABALHO_5.X.production.o
+_sample 4E 0 COMRAM 1 bssCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lfarbss 0 0 FARRAM 0 farbss dist/default/production/TRABALHO_5.X.production.o
+___inthi_stack_hi 0 0 STACK 2 stack /tmp/xcXkiFhMk/driver_tmp_15.o
+___inthi_stack_lo 0 0 STACK 2 stack /tmp/xcXkiFhMk/driver_tmp_15.o
+___lwdiv@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lfardata 0 0 FARRAM 0 fardata dist/default/production/TRABALHO_5.X.production.o
+isa$std 1 0 ABS 0 - /tmp/xcXkiFhMk/driver_tmp_15.o
+stackhi 0 0 ABS 0 - /tmp/xcXkiFhMk/driver_tmp_15.o
+stacklo 0 0 ABS 0 - /tmp/xcXkiFhMk/driver_tmp_15.o
+__Lintcode 8 0 CODE 0 intcode dist/default/production/TRABALHO_5.X.production.o
+__Lintret 0 0 ABS 0 intret dist/default/production/TRABALHO_5.X.production.o
+__Lirdata 0 0 CODE 0 irdata dist/default/production/TRABALHO_5.X.production.o
+_ADCON0bits FC2 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+_ADCON1bits FC1 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+_ADCON2bits FC0 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+___fladd@grs 10 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___fleq@ff1 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___fleq@ff2 5 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lspace_0 0 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Lspace_1 0 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Lspace_2 0 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Lspace_4 0 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__pbssCOMRAM 4E 0 COMRAM 1 bssCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 dist/default/production/TRABALHO_5.X.production.o
+_PIR1bits F9E 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___fltol@exp1 3B 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+_enviarString 6BA0 0 CODE 0 text8 dist/default/production/TRABALHO_5.X.production.o
+end_of_initialization 6C02 0 CODE 0 cinit dist/default/production/TRABALHO_5.X.production.o
+__Lnvrram 0 0 COMRAM 1 nvrram dist/default/production/TRABALHO_5.X.production.o
+__Hintentry 0 0 ABS 0 intentry dist/default/production/TRABALHO_5.X.production.o
+___lwdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+?___fladd 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+?___flmul 19 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+?___flsub 11 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+?___fltol 32 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+?___lwdiv 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+?___lwmod 8 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Hreset_vec 4 0 CODE 0 reset_vec dist/default/production/TRABALHO_5.X.production.o
+__Lramtop 600 0 RAM 0 ramtop dist/default/production/TRABALHO_5.X.production.o
+__Lrparam 0 0 COMRAM 1 rparam dist/default/production/TRABALHO_5.X.production.o
+__pcinit 6BD6 0 CODE 0 cinit dist/default/production/TRABALHO_5.X.production.o
+__ptext0 6B28 0 CODE 0 text0 dist/default/production/TRABALHO_5.X.production.o
+__ptext1 6CBA 0 CODE 0 text1 dist/default/production/TRABALHO_5.X.production.o
+__ptext3 72D6 0 CODE 0 text3 dist/default/production/TRABALHO_5.X.production.o
+__ptext4 6B70 0 CODE 0 text4 dist/default/production/TRABALHO_5.X.production.o
+__ptext5 6B4A 0 CODE 0 text5 dist/default/production/TRABALHO_5.X.production.o
+__ptext6 6C56 0 CODE 0 text6 dist/default/production/TRABALHO_5.X.production.o
+__ptext7 6D20 0 CODE 0 text7 dist/default/production/TRABALHO_5.X.production.o
+__ptext8 6BA0 0 CODE 0 text8 dist/default/production/TRABALHO_5.X.production.o
+__ptext9 6B34 0 CODE 0 text9 dist/default/production/TRABALHO_5.X.production.o
+__Lstruct 0 0 COMRAM 1 struct dist/default/production/TRABALHO_5.X.production.o
+__Ltext10 0 0 ABS 0 text10 dist/default/production/TRABALHO_5.X.production.o
+__Ltext11 0 0 ABS 0 text11 dist/default/production/TRABALHO_5.X.production.o
+__Ltext12 0 0 ABS 0 text12 dist/default/production/TRABALHO_5.X.production.o
+__Ltext13 0 0 ABS 0 text13 dist/default/production/TRABALHO_5.X.production.o
+__Ltext14 0 0 ABS 0 text14 dist/default/production/TRABALHO_5.X.production.o
+__Ltext15 0 0 ABS 0 text15 dist/default/production/TRABALHO_5.X.production.o
+__ramtop 600 0 RAM 0 ramtop /tmp/xcXkiFhMk/driver_tmp_15.o
+_sprintf 72D6 0 CODE 0 text3 dist/default/production/TRABALHO_5.X.production.o
+__Lpowerup E 0 CODE 0 powerup dist/default/production/TRABALHO_5.X.production.o
+?___xxtofl 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/TRABALHO_5.X.production.o
+sprintf@ap 17 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+sprintf@sp D 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__H__absolute__ 0 0 ABS 0 __absolute__ dist/default/production/TRABALHO_5.X.production.o
+_isdigit 6B70 0 CODE 0 text4 dist/default/production/TRABALHO_5.X.production.o
+___fladd@aexp E 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___fladd@bexp F 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___fltol@sign1 3A 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Lreset_vec 0 0 CODE 0 reset_vec dist/default/production/TRABALHO_5.X.production.o
+___heap_hi 0 0 ABS 0 - /tmp/xcXkiFhMk/driver_tmp_15.o
+___heap_lo 0 0 ABS 0 - /tmp/xcXkiFhMk/driver_tmp_15.o
+__end_of_rotinaISR 72D6 0 CODE 0 intcode_body dist/default/production/TRABALHO_5.X.production.o
+___fltol@f1 32 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+___param_bank 0 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+___intlo_stack_hi 0 0 STACK 2 stack /tmp/xcXkiFhMk/driver_tmp_15.o
+___intlo_stack_lo 0 0 STACK 2 stack /tmp/xcXkiFhMk/driver_tmp_15.o
+__Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production/TRABALHO_5.X.production.o
+__end_of__initialization 6C02 0 CODE 0 cinit dist/default/production/TRABALHO_5.X.production.o
+__Libigdata 0 0 CODE 0 ibigdata dist/default/production/TRABALHO_5.X.production.o
+__Lclrtext 0 0 ABS 0 clrtext dist/default/production/TRABALHO_5.X.production.o
+rotinaISR@tensao 4A 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__end_of_enviarString 6BD6 0 CODE 0 text8 dist/default/production/TRABALHO_5.X.production.o
+_TXSTAbits FAC 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+_rotinaISR 8 0 CODE 0 intcode dist/default/production/TRABALHO_5.X.production.o
+__pmediumconst 7EEC 0 MEDIUMCONST 0 mediumconst dist/default/production/TRABALHO_5.X.production.o
+sprintf@c 1E 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+sprintf@f E 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__end_of_main 6B34 0 CODE 0 text0 dist/default/production/TRABALHO_5.X.production.o
+__pintcode 8 0 CODE 0 intcode dist/default/production/TRABALHO_5.X.production.o
+isdigit@c 3 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__end_of_dpowers 7EF7 0 MEDIUMCONST 0 mediumconst dist/default/production/TRABALHO_5.X.production.o
+?_sprintf D 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+_isdigit$1076 2 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+_SPBRG FAF 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+_TXREG FAD 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__end_of_setup 6D20 0 CODE 0 text1 dist/default/production/TRABALHO_5.X.production.o
+__HRAM 0 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Hbss 0 0 RAM 1 bss dist/default/production/TRABALHO_5.X.production.o
+__Hram 0 0 ABS 0 ram dist/default/production/TRABALHO_5.X.production.o
+__Hsfr 0 0 ABS 0 sfr dist/default/production/TRABALHO_5.X.production.o
+__LRAM 1 0 ABS 0 - dist/default/production/TRABALHO_5.X.production.o
+__Lbss 0 0 RAM 1 bss dist/default/production/TRABALHO_5.X.production.o
+__Lram 0 0 ABS 0 ram dist/default/production/TRABALHO_5.X.production.o
+__Lsfr 0 0 ABS 0 sfr dist/default/production/TRABALHO_5.X.production.o
+_setup 6CBA 0 CODE 0 text1 dist/default/production/TRABALHO_5.X.production.o
+sprintf@width 1C 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Hsivt_hi 0 0 ABS 0 sivt_hi dist/default/production/TRABALHO_5.X.production.o
+__Hsivt_lo 0 0 ABS 0 sivt_lo dist/default/production/TRABALHO_5.X.production.o
+__initialization 6BD6 0 CODE 0 cinit dist/default/production/TRABALHO_5.X.production.o
+___xxtofl@sign 9 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__pdataCOMRAM 5A 0 COMRAM 1 dataCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Hfardata 0 0 FARRAM 0 fardata dist/default/production/TRABALHO_5.X.production.o
+___wmul@product 5 0 COMRAM 1 cstackCOMRAM dist/default/production/TRABALHO_5.X.production.o
+__Hsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production/TRABALHO_5.X.production.o
+__Lifardata 0 0 CODE 0 ifardata dist/default/production/TRABALHO_5.X.production.o
+__Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/TRABALHO_5.X.production.o
+__Hintcode E 0 CODE 0 intcode dist/default/production/TRABALHO_5.X.production.o
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+cinit 0 6BD6 6BD6 3A 1
+intcode_body 0 70F8 70F8 1DE 1
+text0 0 6B28 6B28 C 1
+text1 0 6CBA 6CBA 66 1
+text3 0 72D6 72D6 33A 1
+text4 0 6B70 6B70 30 1
+text5 0 6B4A 6B4A 26 1
+text6 0 6C56 6C56 64 1
+text7 0 6D20 6D20 74 1
+text8 0 6BA0 6BA0 36 1
+text9 0 6B34 6B34 16 1
+text10 0 6F44 6F44 1B4 1
+text11 0 6E3E 6E3E 106 1
+text12 0 6C10 6C10 46 1
+text13 0 7A36 7A36 4B6 1
+text14 0 7610 7610 426 1
+text15 0 6D94 6D94 AA 1
+idataCOMRAM 0 6B24 6B24 4 1
+cstackCOMRAM 1 1 1 5E 1
+reset_vec 0 0 0 4 1
+intcode 0 8 8 A 1
+mediumconst 0 7EEC 7EEC 14 1
+# %NOTES Section
+# This section contains data of all the note-psects.  The beginning of the section
+# is indicated by %NOTES. The first line indicates the name and decimal
+# byte-length of the first note-psect, e.g.
+#   $codecov_info_hdr 16
+# Each line that follows contains the byte-data of the psect in hexadecimal as a
+# space-separated list. These lines are limited to 16 bytes of data.
+%NOTES
