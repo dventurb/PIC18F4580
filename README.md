@@ -17,8 +17,8 @@
 
 # Resumo
 
-Este repositório reúne scripts em C desenvolvidos para o microcontrolador PIC18F4580 como parte dos projetos e exercícios práticos da disciplina de Microcontroladores do curso. 
-Os projetos incluem configurações e operações com diversos periféricos, além de aplicações básicas e intermediárias de controle e automação.
+Este repositório reúne scripts em C desenvolvidos para o microcontrolador PIC18F4580 como parte dos projetos e exercícios práticos da disciplina de Microcontroladores do curso SEC-IPVC. 
+Os projetos incluem configurações e operações com diversos periféricos, além do mini-projeto desenvolvido no final.
 
 
 # Ferramentas
