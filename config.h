@@ -1,10 +1,3 @@
-/*
- * File:   config.h
- * Author: Carlos Abreu
- *
- * Created on 24 de Outubro de 2021
- */
-
 // CONFIG1H
 #pragma config OSC = IRCIO67    // Oscillator Selection bits (Internal oscillator block, port function on RA6 and RA7)
 #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor disabled)
