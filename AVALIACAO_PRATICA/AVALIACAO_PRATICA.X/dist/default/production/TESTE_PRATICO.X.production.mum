@@ -1,8 +1,0 @@
-
-18F4580 Memory Summary:
-    Program space        used   DC8h (  3528) of  7E82h bytes   ( 10.9%)
-    Data space           used    6Dh (   109) of   600h bytes   (  7.1%)
-    Configuration bits   used     7h (     7) of     7h words   (100.0%)
-    EEPROM space         used     0h (     0) of   100h bytes   (  0.0%)
-    ID Location space    used     0h (     0) of     8h bytes   (  0.0%)
-
